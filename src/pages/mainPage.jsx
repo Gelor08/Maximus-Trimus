@@ -49,7 +49,8 @@ const MainPage = () => {
           width: "100%",
         }}
       >
-        
+        <div className="box1"></div>
+        <div className="box2"></div>
         <div className="contact-content">
           <div className="contact-content-text">
             <h2>Welcome to MAXIMUS TRIMUS</h2>
