@@ -52,32 +52,33 @@ const MainPage = () => {
         <div className="box1"></div>
         <div className="box2"></div>
         <div className="contact-content">
-          <div className="contact-content-text">
-            <h2>Welcome to MAXIMUS TRIMUS</h2>
-            <h3>
-            Established in 2021, Maximus Trimus is a thriving local shop that
-            started in a garage to fulfill a passion for the craftsmanship of
-            haircutting.
-            </h3>
-          </div>
+            <div className="contact-content-text">
+              <h2>Welcome to MAXIMUS TRIMUS</h2>
+              <h3>
+              Established in 2021, Maximus Trimus is a thriving local shop that
+              started in a garage to fulfill a passion for the craftsmanship of
+              haircutting.
+              </h3>
+              <div className="contact-details-grid">
+            <div className="location-info">
+              <h3>Location:</h3>
+              <div className="map-placeholder">
+                <img src="YOUR_MAP_IMAGE_SOURCE" alt="Location Map" />
+              </div>
+            </div>
+            
+            <div className="business-details">
+              <p className="status">🟢 THE BARBER IS IN!</p>
+              <p><strong>Hours of Operation:</strong> Sunday to Saturday</p>
+              <p>7:00 am to 10:00 pm</p>
+              <p><strong>Phone:</strong> 09916461936</p>
+              <p><strong>Email:</strong> maximustrimus@gmail.com</p>
+            </div>
+            </div>
+            </div>
         </div>
 
-        <div className="contact-details-grid">
-          <div className="location-info">
-            <h3>Location:</h3>
-            <div className="map-placeholder">
-              <img src="YOUR_MAP_IMAGE_SOURCE" alt="Location Map" />
-            </div>
-          </div>
-          
-          <div className="business-details">
-            <p className="status">🟢 THE BARBER IS IN!</p>
-            <p><strong>Hours of Operation:</strong> Sunday to Saturday</p>
-            <p>7:00 am to 10:00 pm</p>
-            <p><strong>Phone:</strong> 09916461936</p>
-            <p><strong>Email:</strong> maximustrimus@gmail.com</p>
-          </div>
-        </div>
+        
       </section>
     </div>
   );
