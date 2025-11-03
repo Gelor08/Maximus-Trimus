@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./mainPage.css";
+import { BsStars } from 'react-icons/bs';
+import { PiScissorsThin } from 'react-icons/pi';
 const MainPage = () => {
   return (
     <div className="main-container">
@@ -127,16 +129,16 @@ const MainPage = () => {
           <div className="barber-content-slide slide-2">
             <div className="bio-text-grid">
             <p className="bio-left-col">
-                A solo barber with 5 years of experience, trained under a local legend whose roots trace back to the iconic **Oxford Barbers**. Now, he brings that legacy into his own space a humble garage transformed into Maximus Trimus, where homey comfort meets Roman grit.
+                A solo barber with 5 years of experience, trained under a local legend whose roots trace back to the iconic Oxford Barbers. Now, he brings that legacy into his own space a humble garage transformed into Maximus Trimus, where homey comfort meets Roman grit.
             </p>
             <p className="bio-left-col">
-                Barbering isn't just about scissors and clippers it's a privilege and a responsibility. He believes that when you trust me with your hair, you're trusting me with your confidence. I don't take that lightly.
+                Barbering isn’t just about scissors and clippers it’s a privilege and a responsibility. He believes that when you trust me with your hair, you’re trusting me with your confidence. I don’t take that lightly.
             </p>
 
             <div className="bio-center-col"></div>
             
             <p className="bio-right-col">
-                Every client who sits in his chair gets more than just a trim he **customizes your cut to highlight the best version of you**. Whether it's a clean fade, a sharp style, or just something fresh, he'll make sure you walk out with a look that exceeds your expectations.
+                Every client who sits in his chair gets more than just a trim he customizes your cut to highlight the best version of you. Whether it’s a clean fade, a sharp style, or just something fresh, He’ll make sure you walk out with a look that exceeds your expectations.
             </p>
             <p className="bio-right-col">
                 Funny thing is, he only picked up the clippers to shave my own goatee. But when his dad asked for a buzzcut, something clicked and the rest is history.
@@ -152,14 +154,14 @@ const MainPage = () => {
                   
                   {/* Left Column 1: Years of Experience */}
                   <div className="stat-item left-stat">
-                      <img src="/images/star_icon.png" alt="Experience Icon" className="stat-icon" />
+                      <BsStars className="stat-icon" />
                       <p className="stat-label">Years of Experience:</p>
                       <p className="stat-value">5 years and counting</p>
                   </div>
 
                   {/* Left Column 2: Specialty */}
                   <div className="stat-item left-stat">
-                      <img src="/images/scissors_icon.png" alt="Specialty Icon" className="stat-icon" />
+                      <PiScissorsThin alt="Specialty Icon" className="stat-icon" />
                       <p className="stat-label">Specialty:</p>
                       <p className="stat-value">Modern cuts/Scissor cuts</p>
                   </div>
@@ -169,14 +171,21 @@ const MainPage = () => {
 
                   {/* Right Column 1: Hair Type */}
                   <div className="stat-item right-stat">
-                      <img src="/images/hairtype_icon.png" alt="Hair Type Icon" className="stat-icon" />
+                      <div className="hair-type-icons">
+                        <img src="/images/line.png" alt="Straight Hair Icon" className="stat-icon straight-icon" />
+                        <img src="/images/wavy.png" alt="Wavy Hair Icon" className="stat-icon wavy-icon" />
+                        <img src="/images/curly.png" alt="Curly Hair Icon" className="stat-icon curly-icon" />
+                      </div>
                       <p className="stat-label">Hair Type Accommodatable:</p>
                       <p className="stat-value">Any</p>
                   </div>
 
                   {/* Right Column 2: Hairstyles Experienced In */}
                   <div className="stat-item right-stat">
-                      <img src="/images/hairstyles_icon.png" alt="Styles Icon" className="stat-icon" />
+                    <div className="hair-style-icons">
+                      <img src="/images/hairstyle1.png" alt="Styles Icon" className="stat-icon" />
+                      <img src="/images/hairstyle2.png" alt="Styles Icon" className="stat-icon" />
+                    </div>
                       <p className="stat-label">Hairstyles / Cuts Experienced In:</p>
                       <p className="stat-value">Any</p>
                   </div>

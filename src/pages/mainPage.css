@@ -359,7 +359,7 @@ iframe{
     font-family: 'Roboto Slab', serif; 
     font-size: 1rem;
     line-height: 1.6;
-    margin-bottom: 1.5rem;
+    margin-bottom: 3.5rem;
     color: white;
 }
 
@@ -374,6 +374,7 @@ iframe{
 .bio-right-col {
     grid-column: 3 / 4; 
     padding-left: 20px;
+    margin-bottom: 60%;
 }
 
 .slide-3 {
@@ -383,36 +384,33 @@ iframe{
 
 .stats-grid {
     display: grid;
-    /* Create three columns: Left (3fr), Image Spacer (2fr), Right (3fr) */
     grid-template-columns: 3fr 2fr 3fr; 
-    grid-template-rows: repeat(2, auto); /* Two main rows for the 4 stat items */
-    gap: 40px 10px; /* Vertical and horizontal spacing between grid cells */
+    grid-template-rows: repeat(2, auto); 
+    gap: 40px 10px; 
     width: 100%;
-    max-width: 1200px; /* Constrain grid width */
+    max-width: 1200px; 
     padding: 20px 0;
-    margin-top: 50px; /* Push grid down from the top of the slide */
+    margin-top: 50px; 
     text-align: left;
 }
 
-/* Style for the individual stat boxes */
 .stat-item {
     display: flex;
     flex-direction: column;
-    align-items: flex-start; /* Default alignment */
+    align-items: flex-start; 
     color: white;
 }
 
-/* Align right column stats to the right */
 .stat-item.right-stat {
-    align-items: flex-end; /* Align icon and text to the right side of the column */
+    align-items: flex-end; 
     text-align: right;
 }
 
 .stat-icon {
-    width: 60px; /* Size for the icon image */
+    width: 60px; 
     height: 60px;
     margin-bottom: 10px;
-    filter: brightness(0) invert(1); /* Makes the icons white if they are black SVGs/PNGs */
+    filter: brightness(0) invert(1); 
 }
 
 .stat-label {
@@ -426,16 +424,51 @@ iframe{
     margin: 0;
 }
 
-/* Explicitly place the center column spacer */
 .stat-center-spacer {
-    grid-column: 2 / 3; /* Spans the middle column */
+    grid-column: 2 / 3; 
 }
 
-/* Place the stats into the grid rows/columns */
-.stats-grid .stat-item:nth-child(1) { grid-area: 1 / 1 / 2 / 2; } /* Top Left: Experience */
-.stats-grid .stat-item:nth-child(2) { grid-area: 2 / 1 / 3 / 2; } /* Bottom Left: Specialty */
-.stats-grid .stat-item:nth-child(4) { grid-area: 1 / 3 / 2 / 4; } /* Top Right: Hair Type */
-.stats-grid .stat-item:nth-child(5) { grid-area: 2 / 3 / 3 / 4; } /* Bottom Right: Hairstyles */
+.hair-type-icons {
+    display: flex;
+    justify-content: flex-end; 
+    align-items: center;
+    gap: 5px; 
+    margin-bottom: 10px; 
+}
+
+.hair-type-icons .stat-icon {
+    width: 70px; 
+    height: 70px;
+    margin-bottom: 0; 
+    object-fit: contain;
+    filter: brightness(0) invert(1);
+}
+
+.hair-style-icons {
+    display: flex; 
+    justify-content: flex-end; 
+    align-items: center;
+    gap: 10px; 
+    margin-bottom: 10px; 
+    flex-shrink: 0;
+    max-width: 100%;
+}
+
+.hair-style-icons .stat-icon {
+    width: 80px; 
+    height: 80px;
+    display: block; 
+    margin-bottom: 0; 
+    object-fit: contain;
+    filter: brightness(0) invert(1);
+}
+
+
+.stats-grid .stat-item:nth-child(1) { grid-area: 1 / 1 / 2 / 2; } 
+.stats-grid .stat-item:nth-child(2) { grid-area: 2 / 1 / 3 / 2; } 
+.stats-grid .stat-item:nth-child(4) { grid-area: 1 / 3 / 2 / 4; } 
+.stats-grid .stat-item:nth-child(5) { grid-area: 2 / 3 / 3 / 4; } 
+
 @media (max-width: 768px) {
   .navbar {
     flex-direction: column;
