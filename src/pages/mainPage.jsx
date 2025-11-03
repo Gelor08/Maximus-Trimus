@@ -87,6 +87,16 @@ const MainPage = () => {
 
         
       </section>
+      <section 
+        className="gallery-content"
+        style={{
+          backgroundColor: "rgba(20, 20, 20, 1)",
+          height: "100vh",
+          width: "100vw",
+        }}
+      >
+
+        </section>
     </div>
   );
 };
