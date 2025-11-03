@@ -1,6 +1,5 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./mainPage.css";
-
 const MainPage = () => {
   return (
     <div className="main-container">
@@ -26,7 +25,6 @@ const MainPage = () => {
           width: "100%",
         }}
       >
-        
 
         <div className="home-content">
           <h1>
@@ -97,9 +95,33 @@ const MainPage = () => {
       >
         <div className="gallery-content">
           <h1>The Cuts</h1>
-        </div>
+      </div>
 
-        </section>
+      </section>
+      <section
+        className="barber-section1"
+        style={{
+          backgroundColor: "rgba(20, 20, 20, 1)",
+          height: "100vh",
+          width: "100%",
+        }}
+        
+      >
+        <div className="barber-content1">
+            <img 
+            src="/images/ako.png" 
+            alt="Man Behind the Cuts" 
+            className="barber-image"
+            />
+
+          <div className="barber-text-overlay">
+            <span className="man-text">MAN</span>
+            <span className="behind-text">BEHIND</span>
+            <span className="the-text">THE</span>
+            <span className="cuts-text">CUTS</span>
+          </div>
+        </div>
+      </section>
     </div>
   );
 };
