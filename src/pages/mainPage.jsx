@@ -88,13 +88,16 @@ const MainPage = () => {
         
       </section>
       <section 
-        className="gallery-content"
+        className="gallery-section"
         style={{
           backgroundColor: "rgba(20, 20, 20, 1)",
           height: "100vh",
-          width: "100vw",
+          width: "100%",
         }}
       >
+        <div className="gallery-content">
+          <h1>The Cuts</h1>
+        </div>
 
         </section>
     </div>
