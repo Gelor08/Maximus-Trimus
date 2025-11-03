@@ -66,6 +66,12 @@ section {
   color: rgb(162, 113, 0);
 }
 
+.opaque-content-wrapper {
+  background-color: #222;
+  position: relative;
+  z-index: 10;
+}
+
 .navbar {
   position: fixed;
   top: 0;
@@ -303,6 +309,133 @@ iframe{
   font-size: 14vw;
 }
 
+.barber-fixed-image-wrapper {
+    position: fixed; 
+    top: 0; 
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 3; 
+}
+
+.barber-scroll-content {
+    position: relative; 
+    width: 100%;
+    z-index: 2; 
+}
+
+.barber-content-slide {
+    height: calc(100vh - 70px); 
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    background-color: "rgba(20, 20, 20, 1)"; 
+    padding: 2rem 0;
+    box-sizing: border-box;
+}
+
+.slide-2 {
+    align-items: flex-start; 
+    background-color: #141414;
+    z-index: 1;
+}
+
+
+.bio-text-grid {
+    display: grid;
+    grid-template-columns: 3fr 2fr 3fr; 
+    grid-template-rows: auto;
+    width: 100%;
+    max-width: 1200px; 
+    margin-top: 50px;
+    text-align: left;
+}
+
+.bio-text-grid p {
+    font-family: 'Roboto Slab', serif; 
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    color: white;
+}
+
+
+.bio-left-col {
+    grid-column: 1 / 2; 
+    padding-right: 20px;
+}
+.bio-center-col {
+    grid-column: 2 / 3; 
+}
+.bio-right-col {
+    grid-column: 3 / 4; 
+    padding-left: 20px;
+}
+
+.slide-3 {
+    align-items: center;
+    background-color: #141414;
+}
+
+.stats-grid {
+    display: grid;
+    /* Create three columns: Left (3fr), Image Spacer (2fr), Right (3fr) */
+    grid-template-columns: 3fr 2fr 3fr; 
+    grid-template-rows: repeat(2, auto); /* Two main rows for the 4 stat items */
+    gap: 40px 10px; /* Vertical and horizontal spacing between grid cells */
+    width: 100%;
+    max-width: 1200px; /* Constrain grid width */
+    padding: 20px 0;
+    margin-top: 50px; /* Push grid down from the top of the slide */
+    text-align: left;
+}
+
+/* Style for the individual stat boxes */
+.stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Default alignment */
+    color: white;
+}
+
+/* Align right column stats to the right */
+.stat-item.right-stat {
+    align-items: flex-end; /* Align icon and text to the right side of the column */
+    text-align: right;
+}
+
+.stat-icon {
+    width: 60px; /* Size for the icon image */
+    height: 60px;
+    margin-bottom: 10px;
+    filter: brightness(0) invert(1); /* Makes the icons white if they are black SVGs/PNGs */
+}
+
+.stat-label {
+    font-weight: bold;
+    font-size: 1.1rem;
+    margin: 0;
+}
+
+.stat-value {
+    font-size: 1rem;
+    margin: 0;
+}
+
+/* Explicitly place the center column spacer */
+.stat-center-spacer {
+    grid-column: 2 / 3; /* Spans the middle column */
+}
+
+/* Place the stats into the grid rows/columns */
+.stats-grid .stat-item:nth-child(1) { grid-area: 1 / 1 / 2 / 2; } /* Top Left: Experience */
+.stats-grid .stat-item:nth-child(2) { grid-area: 2 / 1 / 3 / 2; } /* Bottom Left: Specialty */
+.stats-grid .stat-item:nth-child(4) { grid-area: 1 / 3 / 2 / 4; } /* Top Right: Hair Type */
+.stats-grid .stat-item:nth-child(5) { grid-area: 2 / 3 / 3 / 4; } /* Bottom Right: Hairstyles */
 @media (max-width: 768px) {
   .navbar {
     flex-direction: column;
