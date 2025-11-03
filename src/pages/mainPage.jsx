@@ -3,7 +3,8 @@ import "./mainPage.css";
 const MainPage = () => {
   return (
     <div className="main-container">
-      <div className="navbar">
+      <div className="opaque-content-wrapper">
+        <div className="navbar">
           <div className="logo">
             <img src="/images/mainlogo.png" alt="Maximus Trimus Logo" />
           </div>
@@ -14,7 +15,6 @@ const MainPage = () => {
             <li>The Barber</li>
           </ul>
         </div>
-      <div className="opaque-content-wrapper">
         <section
           className="home-section"
           style={{
