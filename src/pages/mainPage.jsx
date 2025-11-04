@@ -31,7 +31,7 @@ const MainPage = () => {
   return (
       <div className="main-container">
         <div className="opaque-content-wrapper">
-          <div className="navbar">
+          <div className={`navbar ${isVisible ? 'navbar--visible' : 'navbar--hidden'}`}>
             <div className="logo">
               <img src="/images/mainlogo.png" alt="Maximus Trimus Logo" />
             </div>
