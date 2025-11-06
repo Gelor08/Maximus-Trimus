@@ -126,6 +126,69 @@ const MainPage = () => {
           >
             <div className="gallery-content">
               <h1>The Cuts</h1>
+              <div className="carousel">
+                <div className="group">
+                  <div className="card">
+                    <img src="/images/1.png" alt="Haircut"/>
+                  </div>
+                  <div className="card">
+                    <img src="/images/2.jpg" alt="Haircut"/>
+                  </div>
+                  <div className="card">
+                    <img src="/images/3.png" alt="Haircut"/>
+                  </div>
+                  <div className="card">
+                    <img src="/images/4.png" alt="Haircut"/>
+                  </div>
+                  <div className="card">
+                    <img src="/images/5.png" alt="Haircut"/>
+                  </div>
+                  <div className="card">
+                    <img src="/images/1.png" alt="Haircut"/>
+                  </div>  
+                </div>
+                <div aria-hidden className="group">
+                  <div className="card">
+                    <img src="/images/1.png" alt="Haircut"/>
+                  </div>
+                  <div className="card">
+                    <img src="/images/2.jpg" alt="Haircut"/>
+                  </div>
+                  <div className="card">
+                    <img src="/images/3.png" alt="Haircut"/>
+                  </div>
+                  <div className="card">
+                    <img src="/images/4.png" alt="Haircut"/>
+                  </div>
+                  <div className="card">
+                    <img src="/images/5.png" alt="Haircut"/>
+                  </div>
+                  <div className="card">
+                    <img src="/images/1.png" alt="Haircut"/>
+                  </div>  
+                </div>
+                <div aria-hidden className="group">
+                  <div className="card">
+                    <img src="/images/1.png" alt="Haircut"/>
+                  </div>
+                  <div className="card">
+                    <img src="/images/2.jpg" alt="Haircut"/>
+                  </div>
+                  <div className="card">
+                    <img src="/images/3.png" alt="Haircut"/>
+                  </div>
+                  <div className="card">
+                    <img src="/images/4.png" alt="Haircut"/>
+                  </div>
+                  <div className="card">
+                    <img src="/images/5.png" alt="Haircut"/>
+                  </div>
+                  <div className="card">
+                    <img src="/images/1.png" alt="Haircut"/>
+                  </div>  
+                </div>
+              </div>
+
           </div>
 
           </section>
