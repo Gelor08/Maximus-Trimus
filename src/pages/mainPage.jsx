@@ -3,6 +3,20 @@ import "./mainPage.css";
 import { BsStars } from 'react-icons/bs';
 import { PiScissorsThin } from 'react-icons/pi';
 const MainPage = () => {
+    // 1. NEW STATE: State to store the URL of the image to display in the modal
+    const [selectedImage, setSelectedImage] = useState(null);
+
+    // Function to handle the click and set the selected image
+    const handleImageClick = (e, imageUrl) => {
+        // Prevents the click from bubbling up and causing issues
+        e.stopPropagation(); 
+        setSelectedImage(imageUrl);
+    };
+
+    // Function to close the modal
+    const closeModal = () => {
+        setSelectedImage(null);
+    };
     const [isVisible, setIsVisible] = useState(true);
     const [lastScrollY, setLastScrollY] = useState(0);
     const controlNavbar = () => {
@@ -29,6 +43,11 @@ const MainPage = () => {
         }
     }, [lastScrollY]); 
   return (
+    <>
+    {/* 2. RENDER THE MODAL AT THE TOP LEVEL */}
+            {selectedImage && (
+              <ImageModal imageUrl={selectedImage} onClose={closeModal} />
+            )}
       <div className="main-container">
         <div className="opaque-content-wrapper">
           <div className={`navbar ${isVisible ? 'navbar--visible' : 'navbar--hidden'}`}>
@@ -128,63 +147,63 @@ const MainPage = () => {
               <h1>The Cuts</h1>
               <div className="carousel">
                 <div className="group">
-                  <div className="card">
+                  <div className="card" onClick={(e) => handleImageClick(e, "/images/1.png")}>
                     <img src="/images/1.png" alt="Haircut"/>
                   </div>
-                  <div className="card">
+                  <div className="card" onClick={(e) => handleImageClick(e, "/images/2.jpg")}>
                     <img src="/images/2.jpg" alt="Haircut"/>
                   </div>
-                  <div className="card">
+                  <div className="card" onClick={(e) => handleImageClick(e, "/images/3.png")}>
                     <img src="/images/3.png" alt="Haircut"/>
                   </div>
-                  <div className="card">
+                  <div className="card" onClick={(e) => handleImageClick(e, "/images/4.png")}>
                     <img src="/images/4.png" alt="Haircut"/>
                   </div>
-                  <div className="card">
+                  <div className="card" onClick={(e) => handleImageClick(e, "/images/5.png")}>
                     <img src="/images/5.png" alt="Haircut"/>
                   </div>
-                  <div className="card">
-                    <img src="/images/1.png" alt="Haircut"/>
+                  <div className="card" onClick={(e) => handleImageClick(e, "/images/6.jpg")}>
+                    <img src="/images/6.jpg" alt="Haircut"/>
                   </div>  
                 </div>
                 <div aria-hidden className="group">
-                  <div className="card">
+                  <div className="card" onClick={(e) => handleImageClick(e, "/images/1.png")}>
                     <img src="/images/1.png" alt="Haircut"/>
                   </div>
-                  <div className="card">
+                  <div className="card" onClick={(e) => handleImageClick(e, "/images/2.jpg")}>
                     <img src="/images/2.jpg" alt="Haircut"/>
                   </div>
-                  <div className="card">
+                  <div className="card" onClick={(e) => handleImageClick(e, "/images/3.png")}>
                     <img src="/images/3.png" alt="Haircut"/>
                   </div>
-                  <div className="card">
+                  <div className="card" onClick={(e) => handleImageClick(e, "/images/4.png")}>
                     <img src="/images/4.png" alt="Haircut"/>
                   </div>
-                  <div className="card">
+                  <div className="card" onClick={(e) => handleImageClick(e, "/images/5.png")}>
                     <img src="/images/5.png" alt="Haircut"/>
                   </div>
-                  <div className="card">
-                    <img src="/images/1.png" alt="Haircut"/>
+                  <div className="card" onClick={(e) => handleImageClick(e, "/images/6.jpg")}>
+                    <img src="/images/6.jpg" alt="Haircut"/>
                   </div>  
                 </div>
                 <div aria-hidden className="group">
-                  <div className="card">
+                  <div className="card" onClick={(e) => handleImageClick(e, "/images/1.png")}>
                     <img src="/images/1.png" alt="Haircut"/>
                   </div>
-                  <div className="card">
+                  <div className="card" onClick={(e) => handleImageClick(e, "/images/2.jpg")}>
                     <img src="/images/2.jpg" alt="Haircut"/>
                   </div>
-                  <div className="card">
+                  <div className="card" onClick={(e) => handleImageClick(e, "/images/3.png")}>
                     <img src="/images/3.png" alt="Haircut"/>
                   </div>
-                  <div className="card">
+                  <div className="card" onClick={(e) => handleImageClick(e, "/images/4.png")}>
                     <img src="/images/4.png" alt="Haircut"/>
                   </div>
-                  <div className="card">
+                  <div className="card" onClick={(e) => handleImageClick(e, "/images/5.png")}>
                     <img src="/images/5.png" alt="Haircut"/>
                   </div>
-                  <div className="card">
-                    <img src="/images/1.png" alt="Haircut"/>
+                  <div className="card" onClick={(e) => handleImageClick(e, "/images/6.jpg")}>
+                    <img src="/images/6.jpg" alt="Haircut"/>
                   </div>  
                 </div>
               </div>
@@ -290,11 +309,22 @@ const MainPage = () => {
                 </div>
             </div>
           </div>
-            
-          
         </section>
       </div>
+      {selectedImage && (
+    <ImageModal imageUrl={selectedImage} onClose={closeModal} />
+  )}
+    </>
   );
 };
-
+const ImageModal = ({ imageUrl, onClose }) => {
+    return (
+        <div className="modal-backdrop" onClick={onClose}>
+            <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+                <button className="modal-close-btn" onClick={onClose}>&times;</button>
+                <img src={imageUrl} alt="Enlarged Haircut" className="modal-image" />
+            </div>
+        </div>
+    );
+};
 export default MainPage;

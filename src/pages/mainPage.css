@@ -266,7 +266,7 @@ iframe{
 .carousel{
   margin: 80px auto;
   width: 90%;
-  border: 5px solid red;
+  border: 5px;
   display: flex;
   overflow-x: auto;
 }
@@ -286,7 +286,6 @@ iframe{
   flex: 0 0 18em;
   height: 35em;
   padding: 0.5em;
-  background-color: cornflowerblue;
   border-radius: .2em;
   align-content: center;
   flex-shrink: 0;
@@ -302,6 +301,55 @@ iframe{
   from {translate: 0;}
   to {translate: -100%;}
 }
+
+.modal-backdrop {
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.9); 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Must be the highest layer to cover everything */
+    cursor: pointer;
+}
+
+/* Enlarged image container */
+.modal-content {
+    background: transparent;
+    max-width: 90%;
+    max-height: 90%;
+    position: relative;
+}
+
+/* The enlarged image */
+.modal-image {
+    max-width: 100%;
+    max-height: 90vh;
+    object-fit: contain; 
+    border-radius: 5px;
+}
+
+/* Close button (Optional styling, but recommended) */
+.modal-close-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: transparent;
+    color: white;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+/* Add hand pointer to carousel items */
+.card {
+    cursor: pointer;
+}
+
 .barber-section1 {
     position: relative;
     min-height: 300vh;
