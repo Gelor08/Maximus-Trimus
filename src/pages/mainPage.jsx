@@ -33,7 +33,7 @@ const MainPage = () => {
         <div className="opaque-content-wrapper">
           <div className={`navbar ${isVisible ? 'navbar--visible' : 'navbar--hidden'}`}>
             <div className="logo">
-              <img src="/images/mainlogo.png" alt="Maximus Trimus Logo" />
+              <img src="/images/weblogo.png" alt="Maximus Trimus Logo" />
             </div>
               <ul className="nav-links">
                 <li><a href="#home">Home</a></li>
