@@ -264,7 +264,7 @@ iframe{
 }
 
 .carousel{
-  margin: 100px auto;
+  margin: 80px auto;
   width: 90%;
   border: 5px solid red;
   display: flex;

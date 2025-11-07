@@ -264,7 +264,7 @@ const MainPage = () => {
                     {/* Right Column 1: Hair Type */}
                     <div className="stat-item right-stat">
                         <div className="hair-type-icons">
-                          <img src="/images/line.png" alt="Straight Hair Icon" className="stat-icon straight-icon" />
+                          <img src="/images/straight.png" alt="Straight Hair Icon" className="stat-icon straight-icon" />
                           <img src="/images/wavy.png" alt="Wavy Hair Icon" className="stat-icon wavy-icon" />
                           <img src="/images/curly.png" alt="Curly Hair Icon" className="stat-icon curly-icon" />
                         </div>
@@ -275,8 +275,9 @@ const MainPage = () => {
                     {/* Right Column 2: Hairstyles Experienced In */}
                     <div className="stat-item right-stat">
                       <div className="hair-style-icons">
-                        <img src="/images/hairstyle1.png" alt="Styles Icon" className="stat-icon" />
-                        <img src="/images/hairstyle2.png" alt="Styles Icon" className="stat-icon" />
+                        <img src="/images/hairstyle 4.png" alt="Styles Icon" className="stat-icon" />
+                        <img src="/images/hairstyle5.png" alt="Styles Icon" className="stat-icon" />
+                        <img src="/images/hairstyle6.png" alt="Styles Icon" className="stat-icon" />
                       </div>
                         <p className="stat-label">Hairstyles / Cuts Experienced In:</p>
                         <p className="stat-value">Any</p>
