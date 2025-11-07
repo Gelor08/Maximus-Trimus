@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto+Slab:wght@400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,600;1,700&family=Playfair+Display:wght@700&family=Roboto+Slab:wght@400&display=swap');
 html{
   scroll-behavior: smooth;
 }
@@ -117,11 +118,16 @@ section {
 }
 
 .nav-links li a {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
     text-decoration: none; 
+    text-transform: uppercase;
     color: #fff; 
-    font-weight: 500;
+    font-weight: 700;
+    letter-spacing: 1px;
     cursor: pointer;
     transition: color 0.3s ease;
+
 }
 
 .nav-links li a:hover {
