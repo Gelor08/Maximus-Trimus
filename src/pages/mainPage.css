@@ -276,8 +276,8 @@ iframe{
   padding-right: 1em;
 }
 .card{
-  flex: 0 0 12em;
-  height: 20em;
+  flex: 0 0 18em;
+  height: 35em;
   padding: 0.5em;
   background-color: cornflowerblue;
   border-radius: .2em;
