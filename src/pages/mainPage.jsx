@@ -57,6 +57,14 @@ const MainPage = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+  const scrollToSection = (e, id) => {
+  e.preventDefault(); // prevent default anchor jump
+  const section = document.getElementById(id);
+  if (section) {
+    section.scrollIntoView({ behavior: "smooth" }); // smooth scroll
+  }
+};
+
   return (
     <>
     {/* 2. RENDER THE MODAL AT THE TOP LEVEL */}
@@ -70,10 +78,18 @@ const MainPage = () => {
               <img src="/images/weblogo.png" alt="Maximus Trimus Logo" />
             </div>
               <ul className="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li><a href="#gallery">Gallery</a></li>
-                <li><a href="#the-barber">The Barber</a></li>
+                <li>
+                  <a href="#home" onClick={(e) => scrollToSection(e, "home")}>Home</a>
+                </li>
+                <li>
+                  <a href="#contact" onClick={(e) => scrollToSection(e, "contact")}>Contact</a>
+                </li>
+                <li>
+                  <a href="#gallery" onClick={(e) => scrollToSection(e, "gallery")}>Gallery</a>
+                </li>
+                <li>
+                  <a href="#the-barber" onClick={(e) => scrollToSection(e, "the-barber")}>The Barber</a>
+                </li>
               </ul>
           </div>
           <div className="scroll-container">

@@ -2,6 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,600;1,700&family=Playfair+Display:wght@700&family=Roboto+Slab:wght@400&display=swap');
 html{
   scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;
 }
 body {
   background-color: #222;
@@ -18,6 +19,7 @@ section {
   color: white;
   padding-top: 70px;
   box-sizing: border-box;
+  opacity: 1;
 }
 
 .main-container{
@@ -25,8 +27,20 @@ section {
 }
 
 .scroll-container {
-  height: 200vh; 
-  position: relative;
+  height: 100%;
+  width: 100%;
+  overflow-y: visible;
+  scroll-behavior: smooth;
+}
+
+.scroll-container section {
+  height: 100vh;
+  scroll-snap-align: start;
+}
+
+.scroll-container.scrolled .home-content{
+  transform: translateY(-100px);
+  opacity: 0;
 }
 
 .scroll-container.scrolled .contact-section {
@@ -45,6 +59,18 @@ section {
   text-align: right;
   margin-top: 100px;
   padding-right: 4%;
+  transition: all 0.8 ease-out;
+  transform: translateY(0);
+  opacity: 1;
+}
+
+
+.home-section,
+.contact-section {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  transition: opacity 0.8s ease-out;
 }
 
 .home-content h1 {
@@ -154,20 +180,12 @@ section {
 }
 
 .contact-section {
-  position: sticky;
-  scroll-snap-align: start;
-  height: 100vh;
-  width: 100vw;
-  position: relative; 
-  color: white;
-  padding-top: 70px;
-  box-sizing: border-box;
-  background-size: 100% auto; 
-  background-repeat: no-repeat;
-  background-position: top center;
-  transform: translateY(100%);
+  position: relative;
   top: 0;
+  height: 100vh;
+  width: 100%;
   z-index: 2;
+  
 }
 
 .box1 {
@@ -277,9 +295,15 @@ iframe{
 }
 
 .home-section {
-  position: sticky;
+  position: relative;
   top: 0;
   z-index: 1;
+  height: 100vh;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: transform 1s ease-out;
 }
 
 .gallery-section {
@@ -337,6 +361,17 @@ iframe{
   to {translate: -100%;}
 }
 
+@keyframes appear {
+  from{
+    opacity: 0;
+    scale: 0.5;
+  }
+  to{
+    opacity: 1;
+    scale: 1;
+  }
+}
+
 .modal-backdrop {
     position: fixed; 
     top: 0;
@@ -347,11 +382,11 @@ iframe{
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 1000; /* Must be the highest layer to cover everything */
+    z-index: 1000; 
     cursor: pointer;
 }
 
-/* Enlarged image container */
+
 .modal-content {
     background: transparent;
     max-width: 90%;
@@ -359,7 +394,7 @@ iframe{
     position: relative;
 }
 
-/* The enlarged image */
+
 .modal-image {
     max-width: 100%;
     max-height: 90vh;
@@ -367,7 +402,7 @@ iframe{
     border-radius: 5px;
 }
 
-/* Close button (Optional styling, but recommended) */
+
 .modal-close-btn {
     position: absolute;
     top: 20px;
@@ -380,7 +415,7 @@ iframe{
     z-index: 1001;
 }
 
-/* Add hand pointer to carousel items */
+
 .card {
     cursor: pointer;
 }
@@ -437,14 +472,13 @@ iframe{
 
 .man-text {
   left: 2%;
-  top: 2vh;
+  bottom: 80vh;
   font-size: 15vw;
 
 }
 
 .behind-text {
   right: 1%;
-  top: 10vh;
   font-size: 13vw;
 }
 
@@ -490,6 +524,9 @@ iframe{
     padding: 2rem 0;
     box-sizing: border-box;
     background-color: transparent;
+    animation: appear linear;
+    animation-timeline: view();
+    animation-range: entry 0 cover 40%;
 }
 
 .slide-1 {
