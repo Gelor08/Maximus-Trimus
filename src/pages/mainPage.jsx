@@ -42,6 +42,21 @@ const MainPage = () => {
             };
         }
     }, [lastScrollY]); 
+  useEffect(() => {
+    const container = document.querySelector(".scroll-container");
+
+    const handleScroll = () => {
+      const scrollY = window.scrollY;
+      if (scrollY > window.innerHeight / 2) {
+        container.classList.add("scrolled");
+      } else {
+        container.classList.remove("scrolled");
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
   return (
     <>
     {/* 2. RENDER THE MODAL AT THE TOP LEVEL */}
@@ -61,28 +76,30 @@ const MainPage = () => {
                 <li><a href="#the-barber">The Barber</a></li>
               </ul>
           </div>
-          <section
-            id="home"
-            className="home-section"
-            style={{
-              backgroundImage: "linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/images/mainBackground.png')",
-              backgroundSize: "cover",
-              backgroundPosition: "center",
-              backgroundRepeat: "no-repeat",
-              height: "100vh",
-              width: "100%",
-            }}
-          >
+          <div className="scroll-container">
+            <section
+              id="home"
+              className="home-section"
+              style={{
+                backgroundImage: "linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/images/mainBackground.png')",
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+                backgroundRepeat: "no-repeat",
+                height: "100vh",
+                width: "100%",
+              }}
+            >
 
-            <div className="home-content">
-              <h1>
-                Maximus <br /> Trimus
-              </h1>
-              <p>Veni, Vedi, Praecidi.</p>
-              <p><strong>Est. 2021</strong></p>
-              <button className="book-now-btn">BOOK NOW</button>
-            </div>
-          </section>
+              <div className="home-content">
+                <h1>
+                  Maximus <br /> Trimus
+                </h1>
+                <p>Veni, Vedi, Praecidi.</p>
+                <p><strong>Est. 2021</strong></p>
+                <button className="book-now-btn">BOOK NOW</button>
+              </div>
+            </section>
+              
 
           <section
             id="contact"
@@ -134,6 +151,7 @@ const MainPage = () => {
 
             
           </section>
+          </div>
           <section 
             id="gallery"
             className="gallery-section"
